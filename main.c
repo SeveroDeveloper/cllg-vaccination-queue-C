@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "newperson.h"
+#include "queue.h"
 
-void menu()
+void menu(Queue *q)
 {
   int op = -1;
   do
@@ -23,6 +24,7 @@ void menu()
     {
       case 1:
       puts("\n\t>> register a new person <<");
+      personRegister(q);
       break;
       case 2:
       puts("\n\t>> show the intire queue <<");
@@ -41,6 +43,8 @@ void menu()
 }
 
 int main(void) {
-  menu();
+  Queue queue;
+  new_queue(&queue);
+  menu(&queue);
   return 0;
 }
