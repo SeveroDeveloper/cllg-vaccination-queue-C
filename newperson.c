@@ -1,5 +1,34 @@
 #include "newperson.h"
 
+void enqueuePerson(Queue *q, Person *p)
+{
+  enqueue(q, *p);
+}
+
+void enqueuePriorityPerson(Queue *q, Person *p)
+{
+  if(p->age >= 75 || p->hea == true)
+  {
+    p->sta = 1;
+    enqueue_pri(q, *p);
+  }
+  else if (p->age >= 60 && p->age <= 74)
+  {
+    p->sta = 2;
+    enqueue_pri(q, *p);
+  }
+  else if (p->com == true)
+  {
+    p->sta = 3;
+    enqueue_pri(q, *p);
+  }
+  else if (p->pro == true)
+  {
+    p->sta = 4;
+    enqueue_pri(q, *p);
+  }
+}
+
 void personRegister(Queue *q)
 {
   char name[50];
@@ -26,6 +55,15 @@ void personRegister(Queue *q)
   p.hea = hea;
   p.pro = pro;
 
+  if(age>59||com==1||hea==1||pro==1)
+  {
+    enqueuePriorityPerson(q, &p);
+  }
+  else
+  {
+    p.sta=5;
+    enqueuePerson(q, &p);
+  }
 
-  enqueue(q, p);
+  print_queue(q);
 }
