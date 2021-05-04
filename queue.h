@@ -9,7 +9,7 @@
 typedef struct Person{
   char name[50];
   int age;
-  bool com, pro;
+  bool com, hea, pro;
 }Person;
 void print_person(Person p);
 //========================================

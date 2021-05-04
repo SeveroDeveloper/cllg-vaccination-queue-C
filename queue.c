@@ -1,8 +1,8 @@
 #include "queue.h"
 //========================================
 void print_person(Person p){
-  printf("\n\t{name: %s, age: %d}\n", p.name, p.age);
-  printf("\n\t{comorbidity: %s, fourth stage: %s}\n", p.com==1?"yes":"no", p.pro==1?"yes":"no");
+  printf("\n\t{name: %s, age: %d, healthcare: %s\n", p.name, p.age, p.hea==true?"yes":"no");
+  printf("\n\tcomorbidity: %s, fourth stage: %s}\n", p.com==true?"yes":"no", p.pro==true?"yes":"no");
 }
 //========================================
 Cell *new_cell(){
