@@ -4,7 +4,7 @@ void enqueuePerson(Queue *q, Person *p)
 {
   enqueue(q, *p);
 }
-
+//========================================
 void enqueuePriorityPerson(Queue *q, Person *p)
 {
   if(p->age >= 75 || p->hea == true)
@@ -28,7 +28,7 @@ void enqueuePriorityPerson(Queue *q, Person *p)
     enqueue_pri(q, *p);
   }
 }
-
+//========================================
 void personRegister(Queue *q)
 {
   char name[50];
@@ -64,6 +64,4 @@ void personRegister(Queue *q)
     p.sta=5;
     enqueuePerson(q, &p);
   }
-
-  print_queue(q);
 }

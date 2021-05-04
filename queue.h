@@ -29,10 +29,10 @@ Cell *new_cell();
 void new_queue(Queue *q);
 //========================================
 void enqueue(Queue *q, Person data);
-
 void enqueue_pri(Queue *q, Person data);
 //========================================
 void print_queue(Queue *q);
+void print_priorityqueue(Queue *q, int *stage);
 //========================================
 int size_queue(Queue *q);
 //========================================

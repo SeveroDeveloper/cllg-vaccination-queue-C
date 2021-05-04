@@ -6,6 +6,7 @@
 void menu(Queue *q)
 {
   int op = -1;
+  int stage = 0;
   do
   {
    // printf("\e[H\e[2J");  linux screen clear 
@@ -28,9 +29,13 @@ void menu(Queue *q)
       break;
       case 2:
       puts("\n\t>> show the intire queue <<");
+      print_queue(q);
       break;
       case 3:
       puts("\n\t>> show queue by priority level <<");
+      printf("\n\tShow which stage? ");
+      scanf("%d", &stage);
+      print_priorityqueue(q, &stage);
       break;
       case 0:
       puts("\n\t**********  exit  **********");

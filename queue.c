@@ -1,7 +1,7 @@
 #include "queue.h"
 //========================================
 void print_person(Person p){
-  printf("\n\t-> {name: %s, age: %d, healthcare: %s\n", p.name, p.age, p.hea==true?"yes":"no");
+  printf("\n\t> {name: %s, age: %d, healthcare: %s\n", p.name, p.age, p.hea==true?"yes":"no");
   printf("\n\tcomorbidity: %s, fourth stage: %s, stage: %d}\n", p.com==true?"yes":"no", p.pro==true?"yes":"no", p.sta);
 }
 //========================================
@@ -29,7 +29,7 @@ void enqueue(Queue *q, Person data){
   q->end = news;
   q->size++;
 }
-
+//========================================
 void enqueue_pri(Queue *q, Person data){
 
   Cell *news = new_cell();
@@ -133,34 +133,6 @@ void enqueue_pri(Queue *q, Person data){
       break;
     }
   }
-
-  /*
-  if(dado.idade >= 65) {
-
-    // PRIORIDADE
-    Celula *ant = f->inicio;
-    Celula *tmp = f->inicio->prox;
-  // 73 25 32 44 ==> 65
-  // 1 1 1 22 3 3
-    while(tmp!=NULL && tmp->dado.fase <=  dado.fase ){
-      ant = ant->prox;
-      tmp = tmp->prox;
-    }
-   
-    nova->prox = tmp;
-    ant->prox = nova;
-    f->tam++;
-
-    if(tmp == NULL){
-      f->fim = nova;
-    }
-
-  }else{
-
-    f->fim->prox = nova;
-    f->fim = nova;
-    f->tam++;
-  }*/
 }
 //========================================
 void print_queue(Queue *q){
@@ -173,6 +145,22 @@ void print_queue(Queue *q){
   }
 }
 //========================================
+void print_priorityqueue(Queue *q, int *stage)
+{
+  Cell *tmp = q->start->next;
+
+  while(tmp != NULL){
+    if(tmp->data.sta == *stage)
+    {
+      print_person(tmp->data);
+    }
+    if(tmp->data.sta > *stage)
+    {
+      break;
+    }
+    tmp = tmp->next;
+  }
+}
 int size_queue(Queue *q){
   return q->size;
 }
