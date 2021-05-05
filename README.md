@@ -6,7 +6,7 @@ You have four options:<br>
 > * You must inform name, age, if the person has comorbidity, if he works in healthcare or some profession of the fourth stage (such as teachers, security, etc).
 > * Here you enter 1 for YES or 0 for NO.
 > * The system automatically registers the person in his stage and enqueue it, usign this logic:
-```bash
+```c
       case 1:
       {
         Cell *back = q->start;
@@ -30,7 +30,7 @@ You have four options:<br>
 ```
 ### 2 - Show the intire queue
 > * That's just gonna show you the queue, all stages.
-```bash
+```c
 void print_queue(Queue *q){
 
   Cell *tmp = q->start->next;
@@ -43,7 +43,7 @@ void print_queue(Queue *q){
 ```
 ### 3 - show queue by priority level
 > * You must inform witch stage you wat to see, so the system shows you just the people in this stage, using this:
-```bash
+```c
 void print_priorityqueue(Queue *q, int *stage)
 {
   Cell *tmp = q->start->next;
